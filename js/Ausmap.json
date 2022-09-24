@@ -14,7 +14,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/monashOsman/FIT3179/main/electionresults26.csv"
+        "url": "https://raw.githubusercontent.com/monashOsman/SampleRep/main/data/electionresults.csv"
       },
       "mark": {"type": "circle", "tooltip": {"content": "data"}},
       "encoding": {
