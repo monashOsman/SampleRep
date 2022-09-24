@@ -1,0 +1,126 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "background": "white",
+  "padding": 5,
+  "width": 750,
+  "height": 400,
+  "title": {
+    "text": "Australian Party Preferences by States for the 2022 Federal Election",
+    "frame": "group"
+  },
+  "data": [
+    {
+      "name": "source_0",
+      "url": "https://raw.githubusercontent.com/monashOsman/FIT3179/main/STE_2021_AUST_GDA2020%20(1).json",
+      "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA2020"}
+    },
+    {
+      "name": "source_1",
+      "url": "https://raw.githubusercontent.com/monashOsman/FIT3179/main/electionresults26.csv",
+      "format": {"type": "csv", "delimiter": ","},
+      "transform": [
+        {
+          "type": "geojson",
+          "fields": ["Latitude", "Longitude"],
+          "signal": "layer_1_geojson_0"
+        },
+        {
+          "type": "geopoint",
+          "projection": "projection",
+          "fields": ["Latitude", "Longitude"],
+          "as": ["layer_1_x", "layer_1_y"]
+        },
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"Proportion Coalition Votes\"]) && isFinite(+datum[\"Proportion Coalition Votes\"]) && isValid(datum[\"Greens\"]) && isFinite(+datum[\"Greens\"])"
+        }
+      ]
+    }
+  ],
+  "projections": [
+    {
+      "name": "projection",
+      "size": {"signal": "[width, height]"},
+      "fit": {"signal": "[data('source_0'), layer_1_geojson_0]"},
+      "type": "equalEarth"
+    }
+  ],
+  "marks": [
+    {
+      "name": "layer_0_marks",
+      "type": "shape",
+      "style": ["geoshape"],
+      "from": {"data": "source_0"},
+      "encode": {
+        "update": {
+          "fill": {"value": "lightgray"},
+          "stroke": {"value": "white"},
+          "ariaRoleDescription": {"value": "geoshape"}
+        }
+      },
+      "transform": [{"type": "geoshape", "projection": "projection"}]
+    },
+    {
+      "name": "layer_1_marks",
+      "type": "symbol",
+      "style": ["circle"],
+      "from": {"data": "source_1"},
+      "encode": {
+        "update": {
+          "opacity": {"value": 0.7},
+          "tooltip": {"signal": "datum"},
+          "fill": {"scale": "color", "field": "Proportion Coalition Votes"},
+          "ariaRoleDescription": {"value": "circle"},
+          "description": {
+            "signal": "\"Latitude: \" + (format(datum[\"Latitude\"], \"\")) + \"; Longitude: \" + (format(datum[\"Longitude\"], \"\")) + \"; Percentage of Coalition votes: \" + (format(datum[\"Proportion Coalition Votes\"], \"\")) + \"; Percentage of Greens votes: \" + (format(datum[\"Greens\"], \"\"))"
+          },
+          "x": {"field": "layer_1_x"},
+          "y": {"field": "layer_1_y"},
+          "size": {"scale": "size", "field": "Greens"},
+          "shape": {"value": "circle"}
+        }
+      }
+    }
+  ],
+  "scales": [
+    {
+      "name": "color",
+      "type": "linear",
+      "domain": {"data": "source_1", "field": "Proportion Coalition Votes"},
+      "range": {"scheme": "redblue"},
+      "interpolate": "hcl",
+      "zero": false
+    },
+    {
+      "name": "size",
+      "type": "linear",
+      "domain": [10, 21],
+      "range": [9, 361],
+      "zero": false
+    }
+  ],
+  "legends": [
+    {
+      "title": "Percentage of Coalition votes",
+      "fill": "color",
+      "gradientLength": {"signal": "clamp(height, 64, 200)"},
+      "encode": {"gradient": {"update": {"opacity": {"value": 0.7}}}}
+    },
+    {
+      "title": "Percentage of Greens votes",
+      "size": "size",
+      "symbolType": "circle",
+      "encode": {
+        "symbols": {
+          "update": {
+            "fill": {"value": "black"},
+            "fillOpacity": {"value": 0.7},
+            "opacity": {"value": 0.7},
+            "stroke": {"value": "transparent"}
+          }
+        }
+      }
+    }
+  ],
+  "config": {}
+}
