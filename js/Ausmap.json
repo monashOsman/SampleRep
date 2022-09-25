@@ -21,7 +21,7 @@
         "latitude": {"field": "Longitude", "type": "quantitative"},
         "longitude": {"field": "Latitude", "type": "quantitative"},
         "size": {
-          "field": "Greens votes (Percentage)",
+          "field": "Greens votes",
           "type": "quantitative",
           "title": "Percentage of Greens votes",
           "scale": {"domain": [10, 21]}
