@@ -21,13 +21,13 @@
         "latitude": {"field": "Longitude", "type": "quantitative"},
         "longitude": {"field": "Latitude", "type": "quantitative"},
         "size": {
-          "field": "Greens",
+          "field": "GREENS",
           "type": "quantitative",
           "title": "Percentage of Greens votes",
           "scale": {"domain": [10, 21]}
         },
         "color": {
-          "field": "Percentage Coalition Votes",
+          "field": "PERCENTAGE COALITION VOTES",
           "type": "quantitative",
           "title": "Percentage of Coalition votes",
           "scale": {"scheme": "redblue"}
