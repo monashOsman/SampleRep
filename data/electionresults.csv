@@ -1,9 +1,9 @@
-﻿State,Latitude,Longitude,Coalition,Labour,Greens,Percentage Coalition Votes
-Victoria,505,-37,41.5%,41.2%,17.2%,50.2%
-NSW,510,-33.5,45.7%,41.4%,12.9%,52.4%
-ACT,508,-35.5,29.4%,49.8%,20.7%,37.1%
-Queensland,510,-25,49.5%,34.2%,16.1%,59.1%
-Northern Territory,495,-20,36.4%,47.3%,16.2%,43.5%
-Western Australia,480,-32,41.3%,43.7%,14.8%,48.5%
-South Australia,497,-32,42.9%,41.6%,15.4%,50.7%
-Tasmania,506,-42,45.6%,37.7%,16.6%,54.7%
+State,Latitude,Longitude,Coalition,Labour,Greens,Percentage Coalition Votes
+Victoria,505,-37,41.5,41.2,17.2,50.2
+NSW,510,-33.5,45.7,41.4,12.9,52.4
+ACT,508,-35.5,29.4,49.8,20.7,37.1
+Queensland,510,-25,49.5,34.2,16.1,59.1
+Northern Territory,495,-20,36.4,47.3,16.2,43.5
+Western Australia,480,-32,41.3,43.7,14.8,48.5
+South Australia,497,-32,42.9,41.6,15.4,50.7
+Tasmania,506,-42,45.6,37.7,16.6,54.7
