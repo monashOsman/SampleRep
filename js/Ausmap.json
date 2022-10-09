@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Proportion Coalition and Labor Votes by States (2022 Federal Elections)",
+  "title": "Proportion Coalition and Labor Votes by States (2022 Federal Election)",
   "data": {
     "url": "https://raw.githubusercontent.com/monashOsman/SampleRep/main/data/electionresults17.csv"
   },
