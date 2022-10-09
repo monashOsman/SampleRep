@@ -18,10 +18,10 @@
     }
   ],
   "transform": [{"filter": "datum.UniversityGraduatesPerc > Uni_Graduates"}],
-  "vconcat": [
+  "hconcat": [
     {
-      "width": 600,
-      "height": 400,
+      "width": 500,
+      "height": 325,
       "layer": [
         {
           "mark": "circle",
@@ -87,7 +87,7 @@
       ]
     },
     {
-      "width": 750,
+      "width": 500,
       "height": 400,
       "title": "Percentage Party Preferences by States and Territories",
       "projection": {"type": "Mercator"},
