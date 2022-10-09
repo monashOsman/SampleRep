@@ -48,41 +48,41 @@
                 "domain": [25, 30, 35, 40],
                 "range": [65, 150, 200, 350, 490]
               }
-            }
-          },
-          "tooltip": [
-            {"field": "State", "type": "nominal"},
-            {
-              "field": "WeeklyIncome",
-              "type": "quantitative",
-              "format": ",",
-              "title": "Weekly Income"
             },
-            {
-              "field": "IncomeRank",
-              "type": "nominal",
-              "format": ",",
-              "title": "Income Rank /8"
-            },
-            {
-              "field": "UniversityGraduatesPerc",
-              "type": "quantitative",
-              "format": ",",
-              "title": "% Uni. Graduates"
-            },
-            {
-              "field": "Coalition",
-              "type": "nominal",
-              "format": ",",
-              "title": "Coalition Votes (%)"
-            },
-            {
-              "field": "Labour",
-              "type": "nominal",
-              "format": ",",
-              "title": "Labor Votes (%)"
-            }
-          ]
+            "tooltip": [
+              {"field": "State", "type": "nominal"},
+              {
+                "field": "WeeklyIncome",
+                "type": "quantitative",
+                "format": ",",
+                "title": "Weekly Income"
+              },
+              {
+                "field": "IncomeRank",
+                "type": "nominal",
+                "format": ",",
+                "title": "Income Rank /8"
+              },
+              {
+                "field": "UniversityGraduatesPerc",
+                "type": "quantitative",
+                "format": ",",
+                "title": "% Uni. Graduates"
+              },
+              {
+                "field": "Coalition",
+                "type": "nominal",
+                "format": ",",
+                "title": "Coalition Votes (%)"
+              },
+              {
+                "field": "Labour",
+                "type": "nominal",
+                "format": ",",
+                "title": "Labor Votes (%)"
+              }
+            ]
+          }
         }
       ]
     },
